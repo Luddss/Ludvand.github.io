@@ -1,0 +1,566 @@
+@keyframes scaleUpDown {
+    0%, 100% {
+        transform: scaleY(1) scaleX(1);
+    }
+    50%, 90% {
+        transform: scaleY(1.1);
+    }
+    75% {
+        transform: scaleY(0.95);
+    }
+    80% {
+        transform: scaleX(0.95);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: skewX(0) scale(1);
+    }
+    50% {
+        transform: skewX(5deg) scale(0.9);
+    }
+}
+
+@keyframes particleUp {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.7;
+        transform: scale(0.8);
+    }
+    80% {
+        opacity: 0.3;
+        transform: scale(0.6);
+    }
+    100% {
+        opacity: 0;
+        top: -500%;
+        transform: scale(0.2);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        background-color: #ef5a00;
+    }
+    50% {
+        background-color: #ff7800;
+    }
+}
+
+html, body {
+    height: 100%;
+    font-family: Gotham, Arial, "sans-serif";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    margin: 0;
+}
+
+#toVisReport{
+    position: absolute;
+    left: 3%;
+    top: 4%;
+    width: 10%;
+    height: 4vh;
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px #d43322);
+}
+
+.page-index__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 100%;
+    background-color: #111;
+}
+
+.chart-year {
+    position: absolute;
+    top: calc(8% + 50px);
+    text-align: center;
+    font-size: 30px;
+    line-height: 43px;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.under-header-title, .under-header-title2 {
+    position: absolute;
+    top: calc(6.5%);
+    text-align: center;
+    font-size: 30px;
+    line-height: 43px;
+    color: rgba(255, 255, 255, 0.76);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.under-header-title2 {
+    margin-top: 5%;
+}
+
+.header-title {
+    position: absolute;
+    top: calc(13% + 50px);
+    font-size: 80px;
+    font-size: relative;
+    line-height: 70px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.fire {
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fire2 {
+    position: absolute;
+    top: calc(68% - 50px);
+    left: calc(59% - 50px);
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fire3 {
+    position: absolute;
+    top: calc(58% - 50px);
+    left: calc(40% - 50px);
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fire4 {
+    position: absolute;
+    top: calc(66% - 50px);
+    left: calc(30% - 50px);
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fire5 {
+    position: absolute;
+    top: calc(61% - 50px);
+    left: calc(67% - 50px);
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fire6 {
+    position: absolute;
+    top: calc(78% - 50px);
+    left: calc(44% - 50px);
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fire7 {
+    position: absolute;
+    top: calc(65% - 50px);
+    left: calc(75% - 50px);
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fire8 {
+    position: absolute;
+    top: calc(73% - 50px);
+    left: calc(20% - 50px);
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tree, .tree1, .tree2, .tree3, .tree4, .tree5 {
+    position: absolute;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tree {
+    top: calc(19% - 50px);
+    left: calc(53% - 50px);
+    width: 200px;
+    height: 180px;
+}
+
+.tree1 {
+    top: calc(40% - 50px);
+    left: calc(44% - 50px);
+    width: 200px;
+    height: 180px;
+}
+
+.tree2 {
+    top: calc(40% - 50px);
+    left: calc(30% - 50px);
+    width: 200px;
+    height: 180px;
+}
+
+.tree3 {
+    top: calc(44% - 50px);
+    left: calc(58% - 50px);
+    width: 200px;
+    height: 180px;
+}
+
+.tree4 {
+    top: calc(42% - 50px);
+    left: calc(65% - 50px);
+    width: 190px;
+    height: 170px;
+}
+
+.tree5 {
+    top: calc(49% - 50px);
+    left: calc(38% - 50px);
+    width: 170px;
+    height: 150px;
+}
+
+.scroll-clickable {
+    bottom: calc(4%);
+    position: absolute;
+    height: 120px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+#scroller {
+    position: absolute;
+    bottom: calc(6%);
+    height: 60px;
+    margin-left: 37%;
+    margin-right: auto;
+    margin-bottom: -5%;
+}
+
+.scroll-text {
+    position: absolute;
+    bottom: calc(40%);
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.fire-main {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: scaleUpDown 3s ease-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.fire-main .main-fire {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(farthest-corner at 10px 0, #d43300 0%, #ef5a00 95%);
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 0 40% 60% 40%;
+    filter: drop-shadow(0 0 10px #d43322);
+}
+
+.fire-main .particle-fire {
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    width: 10px;
+    height: 10px;
+    background-color: #ef5a00;
+    border-radius: 50%;
+    animation: particleUp 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.fire-right {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    animation: shake 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.fire-right .main-fire {
+    position: absolute;
+    top: 15%;
+    right: -25%;
+    width: 80%;
+    height: 80%;
+    background-color: #ef5a00;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 0 40% 60% 40%;
+    filter: drop-shadow(0 0 10px #d43322);
+}
+
+.fire-right .particle-fire {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #ef5a00;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 50%;
+    animation: particleUp 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.fire-left .particle-fire {
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    width: 15px;
+    height: 15px;
+    background-color: #ef5a00;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 50%;
+    animation: particleUp 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.fire-right .main-fire .fire-left {
+    filter: drop-shadow(0 0 10px #d43322);
+}
+
+.fire-left {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: shake 3s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.fire-left .main-fire {
+    position: absolute;
+    top: 15%;
+    left: -20%;
+    width: 80%;
+    height: 80%;
+    background-color: #ef5a00;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 0 40% 60% 40%;
+    filter: drop-shadow(0 0 10px #d43322);
+}
+
+.fire-left .particle-fire {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 10%;
+    height: 10%;
+    background-color: #ef5a00;
+    border-radius: 50%;
+    animation: particleUp 3s infinite ease-out 0;
+    animation-fill-mode: both;
+}
+
+.fire-bottom .main-fire {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 75%;
+    height: 75%;
+    background-color: #ff7800;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 0 40% 100% 40%;
+    filter: blur(10px);
+    animation: glow 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+#scroller-icon {
+    position: absolute;
+    bottom: 7%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.second-page-container {
+    width: 100%;
+    height: 500vh;
+    background: #999;
+    flex-direction: row;
+}
+
+.sidenav {
+    background-color: #121114;
+    width: 3.5%;
+    height: 100vh;
+    float: left;
+    position: sticky;
+    top: 0px;
+}
+
+.content1, .content2, .content3, .content4, .content5 {
+    background-color: #191821;
+    width: 96.5%;
+    height: 100vh;
+    position: relative;
+    float: right;
+}
+
+.navCircles {
+    align-items: center;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15vh;
+}
+
+.border {
+    border: 5px solid #d34808;
+}
+
+.noBorder {
+    border: 0px;
+}
+
+#circle1, #circle2, #circle3, #circle4, #circle5 {
+    background: grey;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.info {
+    position: absolute;
+    width: 100%;
+    margin-top: 13%;
+}
+
+.yearlyFire {
+    position: absolute;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#joelsDiv {
+    height: 380px;
+    width: 500px;
+    left: 21%;
+    top: 36%;
+    color: whitesmoke;
+}
+
+.joelsDivTitel {
+    position: absolute;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    height: 380px;
+    width: 500px;
+    left: 25%;
+    top: 30%;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 20px;
+}
+
+.chinchaga {
+    position: absolute;
+    opacity: 90%;
+    height: 380px;
+    width: 500px;
+    left: 50%;
+    top: 35%;
+}
+
+.dataText{
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+    opacity: 90%;
+    height: 200px;
+    width: 80%;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+#dataText1{
+    left: 8%;
+    top: 20%;
+}
+
+#dataText2{
+    left: 8%;
+    top: 37%;
+}
+
+#dataText3{
+    left: 9%;
+    top: 65%;
+    color: rgb(231, 95, 4);
+}
+
+#data{
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+    opacity: 90%;
+    height: 80px;
+    width: 80%;
+    color: rgba(255, 255, 255, 0.76);
+    left: 9%;
+    top: 75%;
+}
+
+.icon{
+    height: 80px;
+    width: 80px;
+}
+
+.nextPage{
+    position: absolute;
+    height: 30px;
+    width: 50px;
+    left: 47.5%;
+    bottom: 4vh;
+    opacity: 70%;
+    cursor: pointer;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Wildfires</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- import the webpage's javascript file -->
+    <script src="myScript.js" defer></script>
+    <script src="onScroll.js" defer></script>
+</head>
+
+
+
+<body>
+
+    <div class="topMenu">
+        <a href="..\index2.html"><img src="toFinal.png" id="toFinal"></a>
+        <div id="menuTitle">Menu:</div>
+        <div id="menuHeader">Analysing Eye Movement</div>
+        <div id="showHideButtons">
+            <button type="button" id="hideButton" onclick="hide('eyeMovement1')">Eye Movement</button>
+            <button type="button" id="hideButton" onclick="hide('eyeMovement2')">Saccades and fixations</button>
+            <button type="button" id="hideButton" onclick="hide('eyeMovement3')">Fixations</button>
+            <button type="button" id="hideButton" onclick="hide('eyeMovement4')">Thoughts</button>
+        </div>
+
+        <div id="menuHeader2">Explenations</div>
+        <div id="showHideButtons2">
+            <button type="button" id="hideButton" onclick="hide('explain1')">Design choices</button>
+            <button type="button" id="hideButton" onclick="hide('technical')">Technical choices</button>
+            <button type="button" id="hideButton" onclick="hide('narration')">Narration</button>
+        <!--<button type="button" id="hideButton" onclick="hide('eyeMovement4')">Thoughts</button>-->
+        </div>
+
+        <div id="menuHeader3">Improvements</div>
+        <div id="showHideButtons3">
+            <button type="button" id="hideButton" onclick="hide('done')">Improvements at individual work</button>
+            <button type="button" id="hideButton" onclick="hide('notdone')">Improvements not explored</button>
+        </div>
+    </div>
+
+    <div id="sketch1">
+        <div class="html_overlay" id="choro">
+            <svg id="my_dataviz"></svg>
+            <div id="scale">
+                <img id="scaleImg"
+                    src="https://cdn.glitch.com/14594709-a203-4635-bc07-c097e94092aa%2ForangeScale.PNG?v=1582883515746" />
+                <p id="lowValue">
+                    721 km<sup>2</sup>
+                </p>
+                <p id="lowValue2">
+                    (size of Gothenburg Municipitality)
+                </p>
+                <p id="highValue">
+                    50000 km<sup>2</sup>
+                </p>
+            </div>
+            <div class="popup">
+                <span class="popuptext" id="myPopup" onclick="pop()">
+                    <h2 style="top: 0%;">
+                        Click on a country to learn more
+                    </h2>
+                    <img id="countryFact" />
+                </span>
+            </div>
+        </div>
+        <div class="html_overlay" id="storyDiv">
+            <div class="wrapper">
+                <img id="story"
+                    src="https://cdn.glitch.com/14594709-a203-4635-bc07-c097e94092aa%2Fstory1.png?v=1583172665647" />
+            </div>
+            <button class="button" id="btnForward" onclick="changeStoryForward()">
+                <span>Next</span>
+            </button>
+            <button class="buttonBack " id="btnBack" onclick="changeStoryBack()">
+                <span>Previous </span>
+            </button>
+            <div id="dots">
+                <span class="dot " id="dot1"></span>
+                <span class="dot" id="dot2"></span>
+                <span class="dot" id="dot3"></span>
+            </div>
+
+        </div>
+
+        <div class="html_overlay" id="joelsDiv">
+            <iframe title="Total area burned globally" aria-label="Interactive area chart" id="datawrapper-chart-QKVUu"
+                src="//datawrapper.dwcdn.net/QKVUu/3/" scrolling="no" frameborder="0"
+                style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe>
+            <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", function (a) { if (void 0 !== a.data["datawrapper-height"]) for (var e in a.data["datawrapper-height"]) { var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']"); t && (t.style.height = a.data["datawrapper-height"][e] + "px") } }) }();
+            </script>
+        </div>
+        <div class="html_overlay" id="eyeMovement1" style="display: none"><img src="eyeMovement1.png" id="eyeMovementPic"></div>
+        <div class="html_overlay" id="eyeMovement2" style="display: none"><img src="eyeMovement2.png" id="eyeMovementPic"></div>
+        <div class="html_overlay" id="eyeMovement3" style="display: none"><img src="eyeMovement3.png" id="eyeMovementPic"></div>
+        <div class="html_overlay" id="eyeMovement4" style="display: none"><img src="eyeMovement4.png" id="eyeMovementPic"></div>
+        <div class="html_overlay" id="explain1" style="display: none"><img src="explain1.png" id="eyeMovementPic"></div>      
+        <div class="html_overlay" id="technical" style="display: none"><img src="technical.png" id="eyeMovementPic"></div>     
+        <div class="html_overlay" id="narration" style="display: none"><img src="narration.png" id="eyeMovementPic"></div>     
+        <div class="html_overlay" id="done" style="display: none"><img src="done.png" id="eyeMovementPic"></div>     
+        <div class="html_overlay" id="notdone" style="display: none"><img src="notdone.png" id="eyeMovementPic"></div>   
+    </div>
+</body>
+
+</html>

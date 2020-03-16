@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Wildfires</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="scroll.js" defer></script>
+    <script src="scrollListener.js" defer></script>
+    <script src="chloropleth.js" defer></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='tree.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='chloroplethStyle.css'>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+</head>
+
+<body>
+
+    <div class="page-index__container">
+        <a href="vizReport\index.html"><img src="NavToVisReport.png" id="toVisReport"></a>
+        <div id="testar" class="chart-year">2016</div>
+        <h1 class="header-title">The Spread of Wildfires Globally</h1>
+
+        <div class="forest">
+
+            <div><img src="Forest.svg" id="forest-svg"></div>
+
+
+            <img src="BurntTree.svg" class="tree">
+            '
+            <div class="fire">
+                <div class="fire-left">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+                <div class="fire-main">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+                <div class="fire-right">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+                <div class="fire-bottom">
+                    <div class="main-fire"></div>
+                </div>
+            </div>
+
+            <div class="fire2">
+                <div class="fire-left">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+                <div class="fire-main">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+                <div class="fire-bottom">
+                    <div class="main-fire"></div>
+                </div>
+            </div>
+
+            <img src="BurntTree.svg" class="tree1">
+            <img src="BurntTree.svg" class="tree2">
+            <img src="BurntTree.svg" class="tree3">
+
+            <div class="fire3">
+                <div class="fire-left">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+                <div class="fire-main">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+                <div class="fire-bottom">
+                    <div class="main-fire"></div>
+                </div>
+            </div>
+
+            <div class="fire4">
+                <div class="fire-left">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+                <div class="fire-main">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+                <div class="fire-right">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+            </div>
+
+            <div class="fire5">
+                <div class="fire-left">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+                <div class="fire-main">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+                <div class="fire-right">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+            </div>
+
+            <img src="BurntTree.svg" class="tree4">
+            <img src="BurntTree.svg" class="tree5">
+
+
+            <div class="fire6">
+                <div class="fire-right">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+            </div>
+
+            <div class="fire7">
+                <div class="fire-right">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+            </div>
+
+            <div class="fire8">
+                <div class="fire-right">
+                    <div class="main-fire"></div>
+                    <div class="particle-fire"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-clickable" onclick="smoothScroll(document.getElementById('second'))">
+            <h3 class="scroll-text">Scroll to explore</h3>
+            <img src="scroll.svg" id="scroller">
+        </div>
+    </div>
+
+
+    <div class="second-page-container" id="second">
+
+        <nav class="sidenav">
+
+            <div class="navCircles">
+                <div onclick="smoothScroll(document.getElementById('content1'))" id="circle1"></div>
+                <br>
+                <div onclick="smoothScroll(document.getElementById('content2'))" id="circle2"></div>
+                <br>
+                <div onclick="smoothScroll(document.getElementById('content3'))" id="circle3"></div>
+                <br>
+                <div onclick="smoothScroll(document.getElementById('content4'))" id="circle4"></div>
+                <br>
+                <div onclick="smoothScroll(document.getElementById('content5'))" id="circle5"></div>
+            </div>
+
+        </nav>
+
+        <div class="content1" id="content1">
+
+            <div class="under-header-title">
+                <h1>Why should we care about wildfires?</h1>
+            </div>
+
+            <img src="info.png" class="info">
+            <img src="nextPage.png" class="nextPage" onclick="smoothScroll(document.getElementById('content2'))">
+        </div>
+
+        <div class="content2" id="content2">
+
+            <div class="under-header-title">
+                <h1>Explore The Largest Fires 2016</h1>
+            </div>
+
+            <img src="bubble.png" class="bubble">
+
+            <div class="html_overlay" id="choro" style="transform:scale(1.4)">
+
+                <svg id="my_dataviz"></svg>
+
+                <div id="scale">
+                    <img id="scaleImg" src="orangeScale.png" />
+                    <p id="lowValue">
+                        721 km<sup>2</sup>
+                    </p>
+                    <p id="lowValue2">
+                        (size of Gothenburg Municipitality)
+                    </p>
+                    <p id="highValue">
+                        50000 km<sup>2</sup>
+                    </p>
+                </div>
+                <div class="popup">
+                    <span class="popuptext" id="myPopup" onclick="pop()">
+                        <h2 id="countryClick">
+                            Click on a country to learn more
+                        </h2>
+                        <svg width="80" height="40" viewBox="0 0 336 148" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            id="marginLeftArrow">
+                            <path
+                                d="M3.92594 66.9289C0.0206985 70.8342 0.0206985 77.1658 3.92594 81.0711L67.5656 144.711C71.4708 148.616 77.8024 148.616 81.7077 144.711C85.6129 140.805 85.6129 134.474 81.7077 130.569L25.1391 74L81.7077 17.4315C85.6129 13.5262 85.6129 7.19456 81.7077 3.28932C77.8024 -0.615921 71.4708 -0.615921 67.5656 3.28932L3.92594 66.9289ZM335.003 64L10.997 64V84L335.003 84V64Z"
+                                fill="white" fill-opacity="0.76" />
+                        </svg>
+
+                        <img id="countryFact" />
+                    </span>
+                </div>
+            </div>
+
+            <img src="nextPage.png" class="nextPage" onclick="smoothScroll(document.getElementById('content3'))">
+        </div>
+
+        <div class="content3" id="content3">
+
+            <div class="under-header-title">
+                <h1>Get closer to the ones affected</h1>
+            </div>
+
+            <div class="under-header-title2">
+                <h3>Read information about real people</h3>
+            </div>
+
+            <div id="storyDiv">
+                <div class="wrapper">
+                    <img id="story"
+                        src="Story 1.png"/>
+                </div>
+                <div class="storyMenu">
+                    <button class="button" id="btnForward" onclick="changeStoryForward()">
+                        <span>Next</span>
+                    </button>
+                    <button class="buttonBack " id="btnBack" onclick="changeStoryBack()">
+                        <span>Previous </span>
+                    </button>
+                    <div id="dots">
+                        <span class="dot " id="dot1"></span>
+                        <span class="dot" id="dot2"></span>
+                        <span class="dot" id="dot3"></span>
+                    </div>
+                </div>
+
+            </div>
+            <img src="nextPage.png" class="nextPage" onclick="smoothScroll(document.getElementById('content4'))">
+        </div>
+
+        <div class="content4" id="content4">
+
+            <div class="under-header-title">
+                <h1>Fires leading up to 2016</h1>
+            </div>
+
+            <div class="joelsDivTitel">
+                <h3>Hectares burned each year globally</h3>
+            </div>
+
+            <div class="yearlyFire" id="joelsDiv">
+                <iframe title="" aria-label="Interactive area chart" id="datawrapper-chart-iNYEu"
+                    src="//datawrapper.dwcdn.net/iNYEu/1/" scrolling="no" frameborder="0"
+                    style="width: 300; min-width: 100% !important; border: none;" height="436"></iframe>
+                <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", function (a) { if (void 0 !== a.data["datawrapper-height"]) for (var e in a.data["datawrapper-height"]) { var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']"); t && (t.style.height = a.data["datawrapper-height"][e] + "px") } }) }();
+                </script>
+            </div>
+
+            <img src="Chinchaga.png" class="chinchaga">
+
+            <img src="nextPage.png" class="nextPage" onclick="smoothScroll(document.getElementById('content5'))">
+        </div>
+
+        <div class="content5" id="content5">
+
+            <div class="under-header-title">
+                <h1>Where is the data from?</h1>
+            </div>
+
+            <div class="dataText" id="dataText1">
+                <p>A majority of the data used in our graphs are taken from the <a
+                        href="https://www.globalfiredata.org/index.html?fbclid=IwAR1Q-6i7yCnuxuvKLp7DN2PQLAF1Y6Bkkc6FX8X8zUSLaKYOYkiq5VGFthA"
+                        target="_blank">Global
+                        Fire Emissions Database</a> that is both supported and used by NASA</p>
+            </div>
+
+            <div class="dataText" id="dataText2">
+                <p>The fire Atlas uses satellite information to track monthly fire activity which can estimate burned
+                    area and fire emission.</p>
+                <br>
+                <p>A database file for each year between <a
+                        href="https://glihtdata.gsfc.nasa.gov/files/fire_atlas/?fbclid=IwAR2t-mMioBD1Hg8XZ2BNOo1oyCV6ma8bMmMceHSCIZqrvMIOKmqfYr17TVU"
+                        target="_blank">2003 and 2016</a> can be accessed and used for free trough the Atlas</p>
+            </div>
+
+            <div class="dataText" id="dataText3">
+                <h3>Download Data:</h3>
+            </div>
+
+            <div id="data">
+                <a href="fire.csv" download><img src="earth.png" class="icon"></a>
+                <a href="wildfire-amount-yearly.csv" download><img src="yearly.png" class="icon"></a>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <script>window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+
+            var scrolled = getScrollPercent();
+
+            if ((scrolled > 15) && !(scrolled > 34)) {
+                document.getElementById("circle1").className = "border";
+                document.getElementById("circle2").className = "noBorder";
+                document.getElementById("circle3").className = "noBorder";
+                document.getElementById("circle4").className = "noBorder";
+                document.getElementById("circle5").className = "noBorder";
+            } else if ((scrolled > 34) && !(scrolled > 48)) {
+                document.getElementById("circle1").className = "noBorder";
+                document.getElementById("circle2").className = "border";
+                document.getElementById("circle3").className = "noBorder";
+                document.getElementById("circle4").className = "noBorder";
+                document.getElementById("circle5").className = "noBorder";
+            } else if ((scrolled > 48) && !(scrolled > 65)) {
+                document.getElementById("circle1").className = "noBorder";
+                document.getElementById("circle2").className = "noBorder";
+                document.getElementById("circle3").className = "border";
+                document.getElementById("circle4").className = "noBorder";
+                document.getElementById("circle5").className = "noBorder";
+            } else if ((scrolled > 65) && !(scrolled > 92)) {
+                document.getElementById("circle1").className = "noBorder";
+                document.getElementById("circle2").className = "noBorder";
+                document.getElementById("circle3").className = "noBorder";
+                document.getElementById("circle4").className = "border";
+                document.getElementById("circle5").className = "noBorder";
+            } else if ((scrolled > 92) && !(scrolled > 100)) {
+                document.getElementById("circle1").className = "noBorder";
+                document.getElementById("circle2").className = "noBorder";
+                document.getElementById("circle3").className = "noBorder";
+                document.getElementById("circle4").className = "noBorder";
+                document.getElementById("circle5").className = "border";
+            } else {
+                document.getElementById("circle1").className = "noBorder";
+                document.getElementById("circle2").className = "noBorder";
+                document.getElementById("circle3").className = "noBorder";
+                document.getElementById("circle4").className = "noBorder";
+                document.getElementById("circle5").className = "noBorder";
+            }
+        }
+
+
+        function getScrollPercent() {
+            var h = document.documentElement,
+                b = document.body,
+                st = 'scrollTop',
+                sh = 'scrollHeight';
+            return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+        }
+
+    </script>
+
+
+</body>
+
+</html>
